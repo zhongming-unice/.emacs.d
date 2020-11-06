@@ -36,6 +36,8 @@
 (when (file-exists-p custom-file)
   (load-file custom-file)) 
 
-;;; init.el ends here
 (put 'scroll-left 'disabled nil)
+
+(setq inferior-lisp-program "sbcl")
+;;; init.el ends here
 
