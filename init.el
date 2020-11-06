@@ -29,9 +29,11 @@
 (require 'init-ui)
 (require 'init-lsp)
 (require 'init-web)
+(require 'go-translate)
 
 (when (file-exists-p custom-file)
   (load-file custom-file)) 
 
 ;;; init.el ends here
 (put 'scroll-left 'disabled nil)
+

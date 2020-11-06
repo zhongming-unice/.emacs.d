@@ -26,6 +26,8 @@
     :when (display-graphic-p)
     :hook (org-mode . (lambda() (org-bullets-mode 1)))))
 
+(setq org-html-validation-link nil)
+
 ;; Settings for exec-path-from-shell
 (use-package exec-path-from-shell
   :defer nil
@@ -173,6 +175,22 @@
   (define-key awesome-pair-mode-map (kbd "M-n") 'awesome-pair-jump-left)
   (define-key awesome-pair-mode-map (kbd "M-:") 'awesome-pair-jump-out-pair-and-newline))
 
+
+;; electric-pair
+(electric-pair-mode 1)
+(defun electric-pair ()
+  "If at end of line, insert character pair without surrounding spaces.
+    Otherwise, just insert the typed character."
+  (interactive)
+  (if (eolp) (let (parens-require-spaces) (insert-pair)) (self-insert-command 1)))
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (define-key python-mode-map "\"" 'electric-pair)
+            (define-key python-mode-map "\'" 'electric-pair)
+            (define-key python-mode-map "(" 'electric-pair)
+            (define-key python-mode-map "[" 'electric-pair)
+            (define-key python-mode-map "{" 'electric-pair)))
 ;; ******************** PART4 searching ********************
 ;; Settings for ivy & counsel & swiper
 (use-package ivy
@@ -279,12 +297,23 @@
 (use-package restart-emacs)
 
 ;; Google translate
-(use-package google-translate
-  :init (setq google-translate--tkk-url "https://translate.google.cn"
-              google-translate-default-source-language "en"
-              google-translate-default-target-language "zh-CN")
-  :bind (("C-c t" . google-translate-at-point)
-         ("C-c T" . google-translate-query-translate)))
+;; (use-package google-translate
+;;   :init (setq google-translate--tkk-url "https://translate.google.cn"
+;;               google-translate-default-source-language "en"
+;;               google-translate-default-target-language "zh-CN")
+;;   :bind (("C-c t" . google-translate-at-point)
+;;          ("C-c T" . google-translate-query-translate)))
+
+;; (use-package 'go-translate
+;;   :init (setq go-translate-base-url "https://translate.google.cn"
+;; 	      go-translate-local-language "zh-CN")
+;;   :bind (("C-c t" . go-translate)
+;;          ("C-c T" . go-translate-popup)))
+
+(setq go-translate-local-language "zh-CN")
+(global-set-key "\C-ct" 'go-translate)
+(global-set-key "\C-cT" 'go-translate-popup)
+(setq go-translate-base-url "https://translate.google.cn")
 
 (use-package keycast
   :commands keycast-mode)
