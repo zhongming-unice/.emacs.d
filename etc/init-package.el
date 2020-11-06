@@ -26,6 +26,12 @@
     :when (display-graphic-p)
     :hook (org-mode . (lambda() (org-bullets-mode 1)))))
 
+
+(add-hook 'org-mode-hook
+	  (lambda()
+	    (setq truncate-lines nil))) 
+
+
 (setq org-html-validation-link nil)
 
 ;; Settings for exec-path-from-shell
@@ -312,7 +318,7 @@
 
 (setq go-translate-local-language "zh-CN")
 (global-set-key "\C-ct" 'go-translate)
-(global-set-key "\C-cT" 'go-translate-popup)
+(global-set-key "\C-cc" 'go-translate-popup)
 (setq go-translate-base-url "https://translate.google.cn")
 
 (use-package keycast

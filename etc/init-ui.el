@@ -104,6 +104,7 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 
-
+;; (load-theme 'zenburn t)
+(add-hook 'after-init-hook (lambda () (load-theme 'zenburn)))
 (provide 'init-ui)
 ;;; init-ui.el ends here
