@@ -11,6 +11,8 @@
 ;;                    "lisp/core/core-load-paths.el"))
 
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "etc/")))
+(add-to-list 'custom-theme-load-path (expand-file-name (concat user-emacs-directory "themes/")))
+
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (defconst *is-mac* (eq system-type 'darwin)
