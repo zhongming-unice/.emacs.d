@@ -20,6 +20,12 @@
 ;;   :init (load-theme 'solarized-dark t))
 
 
+;; font
+;; (set-face-attribute 'fixed-pitch-serif nil :family  "Monaco")
+;; (set-face-attribute 'default nil :height 180)
+(set-frame-font "Monaco-18" nil t)
+;; (set-face-font 'fixed-pitch-serif "Monaco")
+;; (set-face-font 'variable-pitch "Liberation Sans")
 
 (use-package smart-mode-line
   :init
@@ -99,10 +105,6 @@
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
   (menu-bar-mode -1))
-
-(scroll-bar-mode 0)
-(tool-bar-mode 0)
-(menu-bar-mode 0)
 
 ;; (load-theme 'zenburn t)
 (add-hook 'after-init-hook (lambda () (load-theme 'zenburn)))

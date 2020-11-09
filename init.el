@@ -18,6 +18,12 @@
 (defconst *is-mac* (eq system-type 'darwin)
   "Const for system check, macOS.")
 
+;;; set  cmd key for meta
+;; (setq mac-option-key-is-meta nil
+;;       mac-command-key-is-meta t
+;;       mac-command-modifier 'meta
+;;       mac-option-modifier 'none)
+
 (defconst *is-linux* (eq system-type 'gnu/linux)
   "Const for system check, GNU/Linux.")
 

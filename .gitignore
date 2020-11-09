@@ -1,5 +1,6 @@
 # Compiled
 *.elc
+*.eld
 
 # Packaging
 .cask
@@ -9,3 +10,14 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+# directory
+eshell/
+auto-save-list/
+elpa/
+snippets/
+transient/
+
+
+# else
+recentf
