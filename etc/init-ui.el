@@ -23,7 +23,7 @@
 ;; font
 ;; (set-face-attribute 'fixed-pitch-serif nil :family  "Monaco")
 ;; (set-face-attribute 'default nil :height 180)
-(set-frame-font "Monaco-18" nil t)
+(set-frame-font "Monaco-16" nil t)
 ;; (set-face-font 'fixed-pitch-serif "Monaco")
 ;; (set-face-font 'variable-pitch "Liberation Sans")
 
