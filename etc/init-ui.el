@@ -102,9 +102,9 @@
 
 ;; Hide scroll bar and tool bar in GUI mode
 (when (display-graphic-p)
-  (scroll-bar-mode -1)
-  (tool-bar-mode -1)
-  (menu-bar-mode -1))
+  (scroll-bar-mode -1))
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; (load-theme 'zenburn t)
 (add-hook 'after-init-hook (lambda () (load-theme 'zenburn)))

@@ -107,7 +107,9 @@ defining them in this alist."
     ;; ("zenburn-bg+1"     . "#4F4F4F")
     ;; ("zenburn-bg+2"     . "#5F5F5F")
     ;; ("zenburn-bg+3"     . "#6F6F6F")
+    ("zenburn-bg-3"     . "#556B2F")
     ("zenburn-bg-2"     . "#000000")
+    ;; ("zenburn-bg-1"     . "#556B2F")
     ("zenburn-bg-1"     . "#010101")
     ("zenburn-bg-08"    . "#010101")
     ("zenburn-bg-05"    . "#010101")
@@ -250,7 +252,7 @@ Also bind `class' to ((class color) (min-colors 89))."
      ((t (:foreground ,zenburn-green-2
                       :background ,zenburn-bg-05
                       :box (:line-width -1 :style released-button)))))
-   `(region ((,class (:background ,zenburn-bg-1 :extend t))
+   `(region ((,class (:background ,zenburn-bg-3 :extend t))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zenburn-bg+2))))
    `(trailing-whitespace ((t (:background ,zenburn-red))))
@@ -371,8 +373,8 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; company-mode
    `(company-tooltip ((t (:foreground ,zenburn-fg :background ,zenburn-bg+1))))
    `(company-tooltip-annotation ((t (:foreground ,zenburn-orange :background ,zenburn-bg+1))))
-   `(company-tooltip-annotation-selection ((t (:foreground ,zenburn-orange :background ,zenburn-bg-1))))
-   `(company-tooltip-selection ((t (:foreground ,zenburn-fg :background ,zenburn-bg-1))))
+   `(company-tooltip-annotation-selection ((t (:foreground ,zenburn-orange :background ,zenburn-bg-3))))
+   `(company-tooltip-selection ((t (:foreground ,zenburn-fg :background ,zenburn-bg-3))))
    `(company-tooltip-mouse ((t (:background ,zenburn-bg-1))))
    `(company-tooltip-common ((t (:foreground ,zenburn-green+2))))
    `(company-tooltip-common-selection ((t (:foreground ,zenburn-green+2))))
