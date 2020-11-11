@@ -83,6 +83,39 @@
 ;; (add-hook 'c++-mode-hook 'eglot-ensure)
 
 ;; ******************** PART3 editing ********************
+;; 如果在mac 终端下使用emacs ,则使用pbpaste从clipboard 获取内容
+(defadvice gui-backend-get-selection (around get-clip-from-terminal-on-osx activate)
+  ad-do-it
+  (when (and (equal system-type 'darwin)
+             (not (display-graphic-p))
+             (not (window-system))
+             (equal (ad-get-arg 0) 'CLIPBOARD))
+    (let ((default-directory "~/"))
+      (setq ad-return-value (shell-command-to-string "pbpaste")))))
+
+;; "+yy 设置内容到系统clipboard
+;; 如果在mac 终端下使用emacs ,则使用pbpaste从clipboard 获取内容
+(defadvice gui-backend-set-selection (around set-clip-from-terminal-on-osx activate)
+  ad-do-it
+  ;; (message "%s %s"  (ad-get-arg 0)  (ad-get-arg 1))
+  (when (and (equal system-type 'darwin)
+             (not (display-graphic-p))
+             (not (window-system))
+             (equal (ad-get-arg 0) 'CLIPBOARD))
+    (let ((process-connection-type nil)   ; ; use pipe
+          (default-directory "~/"))
+      (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+        (process-send-string proc (ad-get-arg 1))
+        (process-send-eof proc)))))
+;; linux 粘贴板
+(defun my-pclip (str-val)
+  (if simpleclip-works (simpleclip-set-contents str-val)
+    (cond
+     ((memq system-type '(gnu gnu/linux gnu/kfreebsd))
+      (with-temp-buffer
+        (insert str-val)
+        (call-process-region (point-min) (point-max) "xsel" nil nil nil "--clipboard" "--input"))))))
+
 ;; Settings for C-a behavior
 (use-package crux
   :bind (("C-a" . crux-move-beginning-of-line)
