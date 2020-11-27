@@ -38,6 +38,16 @@
 (require 'init-lsp)
 (require 'init-web)
 (require 'go-translate)
+(require 'parenface)
+
+;; scheme parEdit mode
+;; (require 'paredit)
+;; (autoload 'paredit-mode "paredit"
+;;   "Minor mode for pseudo-structurally editing Lisp code."
+;;   t)
+
+;; parens in lisp modes.
+(set-face-foreground 'paren-face "DimGray")
 
 (when (file-exists-p custom-file)
   (load-file custom-file)) 

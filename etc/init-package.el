@@ -18,6 +18,7 @@
 ;; Settings for org mode and load config from org file
 (use-package org
   ;; :init (setq org-startup-indented t)
+  :bind (("C-c s" . org-insert-structure-template))
   :config
   (setq org-startup-indented t
 	org-todo-keywords '((sequence "TODO" "DOING" "DONE"))
@@ -31,6 +32,9 @@
 	  (lambda()
 	    (setq truncate-lines nil))) 
 
+(setq org-html-xml-declaration (quote (("html" . "")
+                                       ("was-html" . "<?xml version=\"1.0\" encoding=\"%s\"?>")
+                                       ("php" . "<?php echo \"<?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?>\"; ?>"))))
 
 (setq org-html-validation-link nil)
 
@@ -131,7 +135,9 @@
 
 ;; drag-stuff - move lines up/down
 (use-package drag-stuff
-  :bind (("<M-up>". drag-stuff-up)
+  :bind (("ESC <up>". drag-stuff-up)
+	 ("ESC <down>". drag-stuff-down)
+	 ("<M-up>" . drag-stuff-up)
          ("<M-down>" . drag-stuff-down)))
 
 ;; Settings for company
@@ -278,9 +284,9 @@
 
 ;; ******************** PART5 basic development ********************
 ;; Settings for which-key - suggest next key
-(use-package which-key
-  :defer nil
-  :config (which-key-mode))
+;; (use-package which-key
+;;   :defer nil
+;;   :config (which-key-mode))
 
 ;; Settings for magit
 ;; I quit using magit on windows, 'cause its performance sucks
@@ -325,7 +331,10 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-
+;; Settings for geiser
+(setq scheme-program-name "chez")
+(setq geiser-chez-binary "chez")
+(setq geiser-active-implementations '(chez))
 
 ;; ******************** PART6 Emacs Optimize ********************
 ;; Settings for jump windows, use M-NUM to switch

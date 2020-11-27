@@ -17,8 +17,9 @@ auto-save-list/
 elpa/
 snippets/
 transient/
-
+url/
 
 # else
 recentf
 custom.el
+.lsp*

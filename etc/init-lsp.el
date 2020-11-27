@@ -72,5 +72,12 @@
 ;; org 自动换行
 (add-hook 'org-mode-hook (lambda () (setq toggle-truncate-lines t)))
 
+;; add cu to c++mode
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
+
+;; add lex to c++mode
+(add-to-list 'auto-mode-alist '("\\.l\\'" . c++-mode))
+
+
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
