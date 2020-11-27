@@ -1,6 +1,6 @@
-# .emacs.d
 Personal emacs configuration files
 
-# usage
-
+* usage
+#+begin_src 
 git clone git@github.com:zhongming-unice/.emacs.d.git ~/.emacs.d
+#+end_src
