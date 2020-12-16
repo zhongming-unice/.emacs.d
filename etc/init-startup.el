@@ -55,6 +55,10 @@
 (setq recentf-max-saved-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
+;; set previous/next buffer shortcuts
+(global-set-key (kbd "C-x p") 'previous-buffer)
+(global-set-key (kbd "C-x n") 'next-buffer)
+
 (provide 'init-startup)
 ;;; init-startup.el ends here
 
