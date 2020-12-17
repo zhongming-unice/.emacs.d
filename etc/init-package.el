@@ -27,6 +27,8 @@
     :when (display-graphic-p)
     :hook (org-mode . (lambda() (org-bullets-mode 1)))))
 
+(use-package ox-ioslide
+  :bind (("C-c h" . org-ioslide-export-to-html)))
 
 (add-hook 'org-mode-hook
 	  (lambda()
