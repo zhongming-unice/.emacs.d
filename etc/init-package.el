@@ -400,5 +400,47 @@
 (use-package keycast
   :commands keycast-mode)
 
+;; ******************** PART7 static org blog ********************
+
+(use-package org-static-blog
+  :ensure t
+  :init
+  (setq org-static-blog-use-preview t
+        org-static-blog-preview-convert-titles t
+        org-static-blog-preview-ellipsis "..."
+        org-static-blog-enable-tags t
+        org-static-blog-publish-url "https://zhongming-unice.github.io/"
+        org-static-blog-publish-title "Vue de Villa Nador"
+        org-static-blog-posts-directory "~/blog/zhongming-unice.github.io/posts/"
+        org-static-blog-drafts-directory "~/blog/zhongming-unice.github.io/drafts/"
+        org-static-blog-publish-directory "~/blog/zhongming-unice.github.io/")
+
+  (setq org-static-blog-page-header
+	(concat
+        "<meta name=\"author\" content=\"ming\">"
+        "<meta name=\"referrer\" content=\"no-referrer\">"
+	"<link href=\"static/usual-org-front-matter.css\" rel=\"stylesheet\" type=\"text/css\" />"
+	"<link href=\"static/org-notes-style.css\" rel=\"stylesheet\" type=\"text/css\" />"
+	"<link href=\"static/floating-toc.css\" rel=\"stylesheet\" type=\"text/css\" />"
+	"<link href=\"static/blog-banner.css\" rel=\"stylesheet\" type=\"text/css\" />"
+        "<link rel=\"icon\" href=\"static/favicon.ico\">"))
+
+  (setq org-static-blog-page-preamble
+	(concat
+         "<div class=\"header\">"
+         "  <div class=\"sitelinks\">"
+         "    <a href=\"https://zhongming-unice.github.io/about.html\">about</a>"
+         "    | <a href=\"https://zhongming-unice.github.io/archive.html\">archive</a>"
+	 "    | <a href=\"https://zhongming-unice.github.io/rss.xml\">rss</a>"
+         "  </div>"
+         "</div>"))
+
+;; (setq org-static-blog-page-postamble
+;;   "<div id=\"archive\">
+;;   <a href=\"https://staticblog.org/archive.html\">Other posts</a>
+;; </div>
+;; <center><a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/3.0/88x31.png\" /></a><br /><span xmlns:dct=\"https://purl.org/dc/terms/\" href=\"https://purl.org/dc/dcmitype/Text\" property=\"dct:title\" rel=\"dct:type\">zhongming-unice</span> by <a xmlns:cc=\"https://creativecommons.org/ns#\" href=\"https://zhongming-unice.github.io\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">ZHONG Ming</a> is licensed under a <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>")
+  )
+
 (provide 'init-package)
 ;;; init-package.el ends here

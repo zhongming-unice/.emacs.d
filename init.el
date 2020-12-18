@@ -55,7 +55,11 @@
 (put 'scroll-left 'disabled nil)
 
 (setq inferior-lisp-program "sbcl")
-;;; init.el ends here
+
+;;; fix deprecated cl
+(setq byte-compile-warnings '(cl-functions))
+
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+;;; init.el ends here
