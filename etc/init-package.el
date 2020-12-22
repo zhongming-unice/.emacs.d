@@ -299,9 +299,9 @@
 (use-package counsel
   :after (ivy)
   :bind (("M-x" . counsel-M-x)
-	 ("C-h b" . counsel-descbinds)
-	 ("C-h f" . counsel-describe-function)
-	 ("C-h v" . counsel-describe-variable)
+	 ;; ("C-h b" . counsel-descbinds)
+	 ;; ("C-h f" . counsel-describe-function)
+	 ;; ("C-h v" . counsel-describe-variable)
          ("C-x C-f" . counsel-find-file)
          ("C-c f" . counsel-recentf)
          ("C-c g" . counsel-git)))
