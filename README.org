@@ -1,6 +1,13 @@
 Personal emacs configuration files
 
+* requirement
++ EMACS :: GNU Emacs 27.1
++ Operating System 1 :: macOS 11.1 (Big Sur) - Darwin 20.2.0 - xnu-7195.60.75~1/RELEASE_X86_64
++ Operating System 2 :: Ubuntu 20.04.1 LTS (focal) - 5.4.0-47-generic x86_64 GNU/Linux
+
 * usage
 #+begin_src 
 git clone git@github.com:zhongming-unice/.emacs.d.git ~/.emacs.d
 #+end_src
+For more Emacs usage, see the [[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][GNU Emacs Reference Card]] (for version 27)
+

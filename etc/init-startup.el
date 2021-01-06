@@ -61,8 +61,8 @@
 
 ;; switch key bindings and put help on C-x h instead
 (global-set-key (kbd "C-h") 'delete-backward-char)
-(global-set-key (kbd "M-h") 'backward-kill-word)
-(global-set-key "\C-xh" 'help-command)
+;; (global-set-key (kbd "M-h") 'backward-kill-word)
+;; (global-set-key "\C-xh" 'help-command)
 ;; (define-key isearch-mode-map "\C-h" 'isearch-delete-char)
 
 (provide 'init-startup)

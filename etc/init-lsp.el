@@ -69,15 +69,18 @@
 ;; (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
 ;; (add-hook 'c-mode-hook 'eglot-ensure)
 ;; (add-hook 'c++-mode-hook 'eglot-ensure)
+
 ;; org 自动换行
 (add-hook 'org-mode-hook (lambda () (setq toggle-truncate-lines t)))
 
-;; add cu to c++mode
+;; add .cu, .lex, .inl, .h to c++mode
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
-
-;; add lex to c++mode
 (add-to-list 'auto-mode-alist '("\\.l\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.inl\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+;; add .txt to makefile mode
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . makefile-mode))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
