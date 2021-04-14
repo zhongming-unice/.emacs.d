@@ -46,6 +46,9 @@
 ;;   "Minor mode for pseudo-structurally editing Lisp code."
 ;;   t)
 
+;; replace a region with yank buffer contents
+(delete-selection-mode 1)
+
 ;; parens in lisp modes.
 (set-face-foreground 'paren-face "DimGray")
 
