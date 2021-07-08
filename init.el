@@ -62,6 +62,8 @@
 ;;; fix deprecated cl
 (setq byte-compile-warnings '(cl-functions))
 
+;;; indentation: replace TAB with 8 whitespaces
+(setq-default indent-tabs-mode nil)
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
