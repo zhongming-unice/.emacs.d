@@ -85,6 +85,12 @@
 ;; add .erl to erlang mode 
 (add-to-list 'auto-mode-alist '("\\.erl\\'" . erlang-mode))
 
+;; add ggtags-mode
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode)
+              (ggtags-mode 1))))
+
 ;;;;======================================================== < for gdb >
 
 ;;;; set gdb multi-windows when open
